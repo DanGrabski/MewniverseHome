@@ -13,6 +13,10 @@ import sys
 
 app = Flask(__name__)
 
+# ToDo: need to get rid of Application_Root
+# ToDo: bring in packages for Nest comms
+# ToDo: set up authorization for Nest
+# ToDo: basic webpage to test data reporting from Nest
 app.config['APPLICATION_ROOT'] = '/Mewniverse'
 
 @app.route('/')
