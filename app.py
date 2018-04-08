@@ -18,11 +18,14 @@ app.config['APPLICATION_ROOT'] = '/Mewniverse'
 @app.route('/')
 def render_home():
     # render the home landing page with access to all sections
+    return render_template('index.html')
 
 @app.route('/Nest')
 def render_nest_home():
     # render the home landing page for the nest control page
+    return render_template('index_nest.html')
 
 @app.route('/Weather')
 def render_home_weather():
     # render the home landing page for the weather station
+    return render_template('index_weather.html')
