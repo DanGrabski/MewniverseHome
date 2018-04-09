@@ -15,11 +15,11 @@
 # limitations under the License.
 
 try:
-    from wwn.settings import port
+    from nest_wwn.settings import port
 
     print "port # found in settings: ", port
 except:
     port = 5000
     print "setting port # to default: ", port
 
-from wwn.settings import sim_snapshot_url
+from nest_wwn.settings import sim_snapshot_url
