@@ -17,6 +17,8 @@ from nest_wwn import nest_data, nest_api, port as wwn_port
 app = Flask(__name__)
 app.wsgi_app = PrefixMiddleware(app.wsgi_app, prefix='/Mewniverse')
 
+app.debug = True
+
 # done: need to get rid of Application_Root
 # ToDo: bring in packages for Nest comms
 # ToDo: set up authorization for Nest
@@ -53,10 +55,13 @@ def start_app():
     #     redis_inst = Redis(host=redis_host, port=redis_port)
     #     app.session_interface = redis_session.RedisSessionInterface(redis=redis_inst)
 
-    app.debug = True
-    app.secret_key = "test"
-    port = wwn_port
-    host = '0.0.0.0'
+    if app.debug:
+        app.secret_key = "test"
+        port = wwn_port
+        host = '0.0.0.0'
+    else:
+        # set up app here for non-debug setup
+
     app.run(host=host, port=port, threaded=True)
 
 
